@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Worst Superpower - make.fun entry by @brawijaya.
 
-Writes one useless superpower to /output/entry.txt
-(or ./entry.txt when /output does not exist, for example on a local run).
+Writes one line inventing the most useless superpower
+to /output/entry.txt (or ./entry.txt when /output does not exist,
+for example on a local run).
 """
 
 import os
@@ -13,6 +14,7 @@ MAX_CHARS = 140
 
 
 def validate(text):
+    """A single line within the character limit, nothing else."""
     assert text and text.strip(), "entry must not be blank"
     assert "\n" not in text and "\r" not in text, "entry must be a single line"
     assert len(text) <= MAX_CHARS, "entry is %d chars, max is %d" % (len(text), MAX_CHARS)
